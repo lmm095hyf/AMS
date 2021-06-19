@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.SysUserDao">
+  <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.SysUser">
+    <id column="sysid" jdbcType="INTEGER" property="sysid" />
+    <result column="sysname" jdbcType="VARCHAR" property="sysname" />
+    <result column="syspwd" jdbcType="VARCHAR" property="syspwd" />
+    <result column="sysrole" jdbcType="INTEGER" property="sysrole" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    `sysid`, sysname, syspwd, sysrole
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where `sysid` = #{sysid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_user
+    where `sysid` = #{sysid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="sysid" keyProperty="sysid" parameterType="com.yc.ams.db.pojo.SysUser" useGeneratedKeys="true">
+    insert into sys_user (sysname, syspwd, sysrole
+      )
+    values (#{sysname,jdbcType=VARCHAR}, #{syspwd,jdbcType=VARCHAR}, #{sysrole,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="sysid" keyProperty="sysid" parameterType="com.yc.ams.db.pojo.SysUser" useGeneratedKeys="true">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sysname != null">
+        sysname,
+      </if>
+      <if test="syspwd != null">
+        syspwd,
+      </if>
+      <if test="sysrole != null">
+        sysrole,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sysname != null">
+        #{sysname,jdbcType=VARCHAR},
+      </if>
+      <if test="syspwd != null">
+        #{syspwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sysrole != null">
+        #{sysrole,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yc.ams.db.pojo.SysUser">
+    update sys_user
+    <set>
+      <if test="sysname != null">
+        sysname = #{sysname,jdbcType=VARCHAR},
+      </if>
+      <if test="syspwd != null">
+        syspwd = #{syspwd,jdbcType=VARCHAR},
+      </if>
+      <if test="sysrole != null">
+        sysrole = #{sysrole,jdbcType=INTEGER},
+      </if>
+    </set>
+    where `sysid` = #{sysid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.SysUser">
+    update sys_user
+    set sysname = #{sysname,jdbcType=VARCHAR},
+      syspwd = #{syspwd,jdbcType=VARCHAR},
+      sysrole = #{sysrole,jdbcType=INTEGER}
+    where `sysid` = #{sysid,jdbcType=INTEGER}
+  </update>
+
+  <!-- 根据用户名查询用户信息 -->
+  <select id="selectUserPasswordByName" resultMap="BaseResultMap" parameterType="String">
+    select * from sys_user where sysname = #{loginNumber}
+  </select>
+
+</mapper>

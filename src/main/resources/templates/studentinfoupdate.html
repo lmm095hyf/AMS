@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:selected="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生信息</title>
+</head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link th:href="@{~/assets/layui/css/layui.css}" rel="stylesheet"/>
+<body style="margin: 10px">
+<fieldset class="layui-elem-field">
+    <legend>学号</legend>
+    <div class="layui-field-box">
+        <input type="text" name="number" id="number" class="layui-input" placeholder="学号">
+        <input type="text" name="id" id="id" style="display: none" th:value="${id}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>姓名</legend>
+    <div class="layui-field-box">
+        <input type="text" name="uname" id="uname" class="layui-input" placeholder="姓名">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>入学时间</legend>
+    <div class="layui-field-box">
+        <input type="text" class="layui-input" id="ctime" placeholder="yyyy-MM-dd">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>毕业时间</legend>
+    <div class="layui-field-box">
+        <input type="text" class="layui-input" id="gtime" placeholder="yyyy-MM-dd">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>出生日期</legend>
+    <div class="layui-field-box">
+        <input type="text" name="borthday" id="borthday" class="layui-input" placeholder="出生日期:1996.10">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>身份证</legend>
+    <div class="layui-field-box">
+        <input type="text" name="idcard" id="idcard" class="layui-input" placeholder="身份证">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>电话</legend>
+    <div class="layui-field-box">
+        <input type="text" name="phone" id="phone" class="layui-input" placeholder="电话">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>宿舍</legend>
+    <div class="layui-field-box">
+        <form class="layui-form" method="post">
+            <div class="layui-inline">
+                <div class="layui-form-item">
+
+                    <div id="cat_ids1">
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>学院</legend>
+    <div class="layui-field-box">
+        <form class="layui-form" method="post">
+            <div class="layui-inline">
+                <div class="layui-form-item">
+
+                    <div id="cat_ids2">
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+</fieldset>
+<hr>
+<div class="layui-input-inline">
+    <div class="layui-form-item">
+        <button type="button" class="layui-btn" id="push">提交</button>
+    </div>
+</div>
+</body>
+<script th:src="@{~/assets/layui/layui.js}"></script>
+<script th:src="@{~/assets/jquery.min.js}"></script>
+<script>
+
+    var majorid;
+    var buildingid;
+    var dormid;
+    var classids;
+    var plotid;
+    var ctime;
+    var gtime;
+
+    var newclassid;
+    var newdormid;
+    var newgtime = null;
+    var newctime = null;
+
+    getStudentinfo()
+
+    function getStudentinfo() {
+        let id = $("#id").val()
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/api/v1/student/show",
+            data: {
+                "id": id,
+            },
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                $("#uname").val(data.message.uname)
+                $("#number").val(data.message.number)
+                $("#borthday ").val(data.message.borthday)
+                $("#idcard ").val(data.message.idcard)
+                $("#phone").val(data.message.phone)
+                buildingid = data.message.buildingid
+                majorid = data.message.majorid
+                dormid = data.message.dormid
+                classids = data.message.classid
+                plotid = data.message.plotid
+                ctime = data.message.ctime
+                gtime = data.message.gtime
+            }
+        });
+
+    }
+
+    layui.use('laydate', function () {
+        var laydate1 = layui.laydate;
+        laydate1.render({
+            elem: '#gtime'
+            , value: gtime
+            , done: function (value, date, endDate) {
+               newgtime = value
+            }
+        });
+        var laydate2 = layui.laydate;
+        laydate2.render({
+            elem: '#ctime'
+            , value: ctime
+            , done: function (value, date, endDate) {
+                newctime = value
+            }
+        });
+
+    });
+
+
+
+    getValues()
+
+    function getValues() {
+        let sdrom
+        let sclassroom
+        // 异步查询
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/api/v1/admin/dormmenu",
+            data: {},
+            dataType: "json",
+            async: false,
+            success: function (data) {
+               sdrom = data
+            }
+        });
+
+        // 异步查询
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/api/v1/admin/majormenu",
+            data: {},
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                sclassroom = data
+            }
+        });
+
+        showbuilding(sdrom,sclassroom)
+    }
+
+    function showbuilding(sdrom,sclassroom) {
+
+        layui.config({
+            base: '/assets/layui/layui_extends/'
+        }).extend({
+            selectN: 'selectN',
+            selectM: 'selectM',
+        }).use(['layer', 'form', 'jquery', 'selectN', 'selectM'], function () {
+            $ = layui.jquery;
+            var form = layui.form
+                , selectN = layui.selectN
+                , selectM = layui.selectM;
+
+
+            //无限级分类-所有配置
+            var cat_ids1 = selectN({
+                //元素容器【必填】
+                elem: '#cat_ids1'
+                //候选数据【必填】
+                , data: sdrom
+                //设置了长度
+                , width: null
+                //默认值
+                , selected: [buildingid, plotid, dormid]
+                , tips: ['校区', '宿舍区', '宿舍号']
+                //为真只取最后一个值
+                , last: true
+
+                //事件过滤器，lay-filter名 不设置与选择器相同(去#.)
+                , filter: ''
+
+                //input的name 不设置与选择器相同(去#.)
+                , name: 'cat2'
+
+                //数据分隔符
+                , delimiter: ','
+
+                // 可搜索
+                , search: [true, true]
+                //数据的键名
+                , field: {idName: 'id', titleName: 'name', childName: 'children'}
+
+                //表单区分 form.render(type, filter); 为class="layui-form" 所在元素的 lay-filter="" 的值
+                , formFilter: null
+
+            });
+            var catIns2 = selectN({
+                //元素容器【必填】
+                elem: '#cat_ids2'
+                //候选数据【必填】
+                , data: sclassroom
+                //设置了长度
+                , width: null
+
+                , tips: ['专业', '班级']
+                //为真只取最后一个值
+                , last: true
+                , selected: [majorid, classids]
+                //事件过滤器，lay-filter名 不设置与选择器相同(去#.)
+                , filter: ''
+
+                //input的name 不设置与选择器相同(去#.)
+                , name: 'cat2'
+
+                //数据分隔符
+                , delimiter: ','
+
+                //数据的键名
+                , field: {idName: 'id', titleName: 'name', childName: 'children'}
+
+                //表单区分 form.render(type, filter); 为class="layui-form" 所在元素的 lay-filter="" 的值
+                , formFilter: null
+
+            });
+
+            $("#push").click(function () {
+
+                $.ajax({
+                    type: "post",
+                    contentType: "application/x-www-form-urlencoded",
+                    url: "/api/v1/student/update",
+                    data: {
+
+                        "id":$("#id").val(),
+                        "userName":$("#uname").val(),
+                        "userNumber":$("#number").val(),
+                        "userGtime":new Date(newgtime),
+                        "userCtime":new Date(newctime),
+                        "userBorthday":$("#borthday").val(),
+                        "userIdcard":$("#idcard").val(),
+                        "userPhone":$("#phone").val(),
+                        "userClassid":catIns2.lastValue,
+                        "userDormid":cat_ids1.lastValue,
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.resultTypeEnum == 200) {
+                            layer.msg("操作成功", {
+                                icon: 1
+                            });
+                            var index = parent.layer.getFrameIndex(window.name);
+
+                            parent.layui.table.reload('test');
+                            //关闭父级页面的表格
+                        }else {
+                            layer.msg("操作失败", {
+                                icon: 5
+                            });
+                        }
+                    }
+                });
+            })
+        });
+
+    }
+
+
+
+</script>
+
+</html>

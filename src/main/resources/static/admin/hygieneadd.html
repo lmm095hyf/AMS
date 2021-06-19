@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加卫生</title>
+</head>
+<link rel="stylesheet" href="../assets/layui/css/layui.css" media="all"/>
+<body style="margin: 10px">
+
+<fieldset class="layui-elem-field">
+    <legend>宿舍</legend>
+    <form class="layui-form" method="post" lay-filter="example">
+  <div id="cat_ids2">
+                </div>
+    </form>
+</fieldset>
+
+<fieldset class="layui-elem-field">
+    <legend>卫生分</legend>
+    <input type="text" name="score" id="score" class="layui-input" placeholder="卫生分">
+</fieldset>
+
+<hr>
+<div class="layui-input-inline">
+    <div class="layui-form-item">
+        <button type="button" class="layui-btn" id="push">提交</button>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="../assets/layui/layui.js"></script>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+    });
+    getDorms()
+
+    function getDorms() {
+        let catData
+        // 异步查询
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/api/v1/admin/dormmenu",
+            data: {},
+            dataType: "json",
+            async: false,
+            success: function (data) {
+                catData = data
+                showbuilding(catData)
+            }
+        });
+
+    }
+
+    function showbuilding(catData) {
+
+        layui.config({
+            base: './'
+        }).extend({
+            selectN: '../assets/layui/layui_extends/selectN',
+            selectM: '../assets/layui/layui_extends/selectM',
+        }).use(['layer', 'form', 'jquery', 'selectN', 'selectM'], function () {
+            $ = layui.jquery;
+            var form = layui.form
+                , selectN = layui.selectN
+                , selectM = layui.selectM;
+
+
+            //无限级分类-所有配置
+            var catIns2 = selectN({
+                //元素容器【必填】
+                elem: '#cat_ids2'
+                //候选数据【必填】
+                , data: catData
+                //设置了长度
+                , width: null
+                //默认值
+                , selected: [6, 10, 11]
+
+                , tips: ['校区', '宿舍区', '宿舍号']
+                //为真只取最后一个值
+                , last: true
+
+                //事件过滤器，lay-filter名 不设置与选择器相同(去#.)
+                , filter: ''
+
+                //input的name 不设置与选择器相同(去#.)
+                , name: 'cat2'
+
+                //数据分隔符
+                , delimiter: ','
+
+                // 可搜索
+                , search: [true, true]
+                //数据的键名
+                , field: {idName: 'id', titleName: 'name', childName: 'children'}
+
+                //表单区分 form.render(type, filter); 为class="layui-form" 所在元素的 lay-filter="" 的值
+                , formFilter: null
+
+            });
+
+
+
+
+                $("#push").click(function () {
+
+                    if (catIns2.lastValue ==null){
+                        layer.msg("未到具体宿舍号", {
+                            icon: 5
+                        });
+                        return false;
+                    }
+                    var score = $("#score").val()
+                    $.ajax({
+                        type: "post",
+                        contentType: "application/x-www-form-urlencoded",
+                        url: "/api/v1/hygiene/add",
+                        data: {
+                            "bid": catIns2.values[0],
+                            "pid": catIns2.values[1],
+                            "did": catIns2.lastValue,
+                            "score":score
+                        },
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.resultTypeEnum == 200) {
+                                layer.msg("操作成功", {
+                                    icon: 1
+                                });
+                                var index = parent.layer.getFrameIndex(window.name);
+
+                                parent.layui.table.reload('test');
+                                //关闭父级页面的表格
+                            }else {
+                                layer.msg(data.message, {
+                                    icon: 5
+                                });
+                            }
+                        }
+                    });
+            })
+
+
+            //通过js动态选择
+            $('.set1').click(function () {
+                catIns1.set([6, 10]);
+
+            });
+
+
+            //监听重置按钮
+            $('form').find(':reset').click(function () {
+                $('form')[0].reset();
+                catIns2.set();//默认值
+                showtable()
+                return false;
+            });
+
+
+        });
+
+    }
+
+
+
+</script>
+</html>

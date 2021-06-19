@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.TeacherDao">
+  <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.Teacher">
+    <id column="tid" jdbcType="INTEGER" property="tid" />
+    <result column="tname" jdbcType="VARCHAR" property="tname" />
+    <result column="tprofession" jdbcType="VARCHAR" property="tprofession" />
+    <result column="tjob" jdbcType="VARCHAR" property="tjob" />
+    <result column="tstarttime" jdbcType="VARCHAR" property="tstarttime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    tid, tname, tprofession, tjob, tstarttime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from teacher
+    where tid = #{tid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from teacher
+    where tid = #{tid,jdbcType=INTEGER}
+  </delete>
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from teacher
+  </select>
+
+  <insert id="insert" keyColumn="tid" keyProperty="tid" parameterType="com.yc.ams.db.pojo.Teacher" useGeneratedKeys="true">
+    insert into teacher (tname, tprofession, tjob, 
+      tstarttime)
+    values (#{tname,jdbcType=VARCHAR}, #{tprofession,jdbcType=VARCHAR}, #{tjob,jdbcType=VARCHAR}, 
+      #{tstarttime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="tid" keyProperty="tid" parameterType="com.yc.ams.db.pojo.Teacher" useGeneratedKeys="true">
+    insert into teacher
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tname != null">
+        tname,
+      </if>
+      <if test="tprofession != null">
+        tprofession,
+      </if>
+      <if test="tjob != null">
+        tjob,
+      </if>
+      <if test="tstarttime != null">
+        tstarttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tname != null">
+        #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="tprofession != null">
+        #{tprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="tjob != null">
+        #{tjob,jdbcType=VARCHAR},
+      </if>
+      <if test="tstarttime != null">
+        #{tstarttime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yc.ams.db.pojo.Teacher">
+    update teacher
+    <set>
+      <if test="tname != null">
+        tname = #{tname,jdbcType=VARCHAR},
+      </if>
+      <if test="tprofession != null">
+        tprofession = #{tprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="tjob != null">
+        tjob = #{tjob,jdbcType=VARCHAR},
+      </if>
+      <if test="tstarttime != null">
+        tstarttime = #{tstarttime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.Teacher">
+    update teacher
+    set tname = #{tname,jdbcType=VARCHAR},
+      tprofession = #{tprofession,jdbcType=VARCHAR},
+      tjob = #{tjob,jdbcType=VARCHAR},
+      tstarttime = #{tstarttime,jdbcType=VARCHAR}
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,14 @@
+logging:
+  level:
+    root: info # 默认的全局日志级别
+    org.springframework.web: debug # web相关的日志级别
+  file:
+    path:
+  #日志存放的路径
+  # D:/DemoLocal/log
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

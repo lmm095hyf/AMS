@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>更新宿舍区</title>
+    <link th:href="@{~/assets/layui/css/layui.css}" rel="stylesheet"/>
+</head>
+<body style="margin: 10px">
+<fieldset class="layui-elem-field">
+    <legend>宿舍区</legend>
+    <form class="layui-form" method="post">
+        <div class="layui-input-inline">
+            <div class="layui-form-item">
+                <select name="buildingId" id="buildingId"  >
+                    <option value=""> 请选择 </option>
+                    <option th:selected="${plot.buildingId eq option.fid}"
+                            th:each="option : ${building}"
+                            th:value="${option.fid}" th:text="${option.name}"></option>
+
+                </select>
+            </div>
+        </div></form>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>楼宇</legend>
+    <input type="text" name="plot" id="plot" class="layui-input" placeholder="楼宇"  th:value="${plot.plotname}">
+    <input type="text" name="id" id="id" style="display: none" th:value="${plot.id}">
+</fieldset>
+
+
+<hr>
+<div class="layui-input-inline">
+    <div class="layui-form-item">
+        <button type="button" class="layui-btn" id="push">提交</button>
+    </div>
+</div>
+
+</body>
+<script th:src="@{~/assets/layui/layui.js}"></script>
+<script th:src="@{~/assets/jquery.min.js}"></script>
+<script>
+
+
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+
+    });
+
+
+    $("#push").click(function () {
+
+        var name = $("#plot").val()
+        var buildingId = $("#buildingId").val()
+        var id = $("#id").val()
+
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/api/v1/plot/update",
+            data: {
+                "id":id,
+                "buildingId":buildingId,
+                "plotname":name
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.resultTypeEnum == 200) {
+                    layer.msg("操作成功", {
+                        icon: 1
+                    });
+                    var index = parent.layer.getFrameIndex(window.name);
+
+                    parent.layui.table.reload('test');
+                    //关闭父级页面的表格
+                }else {
+                    layer.msg(data.message, {
+                        icon: 5
+                    });
+                }
+            }
+        });
+    })
+</script>
+</html>

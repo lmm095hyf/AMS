@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>信息详情</title>
+    <link th:href="@{~/assets/layui/css/layui.css}" rel="stylesheet"/>
+</head>
+<body style="margin: 10px">
+<fieldset class="layui-elem-field">
+    <legend>标题</legend>
+    <div class="layui-field-box" th:text="${msg.title}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>内容</legend>
+    <div class="layui-field-box" th:text="${msg.content}">
+    </div>
+</fieldset>
+
+
+</body>
+<script th:src="@{~/assets/layui/layui.js}"></script>
+<script th:src="@{~/assets/jquery.min.js}"></script>
+<script>
+    var index = parent.layer.getFrameIndex(window.name);
+
+    parent.layui.table.reload('test');
+</script>
+</html>

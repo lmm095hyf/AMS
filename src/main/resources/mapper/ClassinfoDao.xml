@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.ClassinfoDao">
+  <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.Classinfo">
+    <id column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="cname" jdbcType="VARCHAR" property="cname" />
+    <result column="csize" jdbcType="INTEGER" property="csize" />
+    <result column="chead" jdbcType="VARCHAR" property="chead" />
+    <result column="profession" jdbcType="VARCHAR" property="profession" />
+    <result column="deid" jdbcType="INTEGER" property="deid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    cid, cname, csize, chead, profession, deid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from classinfo
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from classinfo
+    where cid = #{cid,jdbcType=INTEGER}
+  </delete>
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from classinfo
+  </select>
+  <insert id="insert" keyColumn="cid" keyProperty="cid" parameterType="com.yc.ams.db.pojo.Classinfo" useGeneratedKeys="true">
+    insert into classinfo (cname, csize, chead, 
+      profession, deid)
+    values (#{cname,jdbcType=VARCHAR}, #{csize,jdbcType=INTEGER}, #{chead,jdbcType=VARCHAR}, 
+      #{profession,jdbcType=VARCHAR}, #{deid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" keyColumn="cid" keyProperty="cid" parameterType="com.yc.ams.db.pojo.Classinfo" useGeneratedKeys="true">
+    insert into classinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cname != null">
+        cname,
+      </if>
+      <if test="csize != null">
+        csize,
+      </if>
+      <if test="chead != null">
+        chead,
+      </if>
+      <if test="profession != null">
+        profession,
+      </if>
+      <if test="deid != null">
+        deid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cname != null">
+        #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="csize != null">
+        #{csize,jdbcType=INTEGER},
+      </if>
+      <if test="chead != null">
+        #{chead,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="deid != null">
+        #{deid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yc.ams.db.pojo.Classinfo">
+    update classinfo
+    <set>
+      <if test="cname != null">
+        cname = #{cname,jdbcType=VARCHAR},
+      </if>
+      <if test="csize != null">
+        csize = #{csize,jdbcType=INTEGER},
+      </if>
+      <if test="chead != null">
+        chead = #{chead,jdbcType=VARCHAR},
+      </if>
+      <if test="profession != null">
+        profession = #{profession,jdbcType=VARCHAR},
+      </if>
+      <if test="deid != null">
+        deid = #{deid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.Classinfo">
+    update classinfo
+    set cname = #{cname,jdbcType=VARCHAR},
+      csize = #{csize,jdbcType=INTEGER},
+      chead = #{chead,jdbcType=VARCHAR},
+      profession = #{profession,jdbcType=VARCHAR},
+      deid = #{deid,jdbcType=INTEGER}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>

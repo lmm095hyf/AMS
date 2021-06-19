@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加班级</title>
+</head>
+<link rel="stylesheet" href="../assets/layui/css/layui.css" media="all"/>
+<body style="margin: 10px">
+<fieldset class="layui-elem-field">
+    <legend>班级</legend>
+    <input type="text" name="classroom" id="classroom" class="layui-input" placeholder="班级">
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>上级部门</legend>
+    <form class="layui-form" method="post">
+        <div class="layui-input-inline">
+            <div class="layui-form-item">
+                <select name="majorinfo" id="majorinfo" >
+                    <option value=""> 请选择 </option>
+                </select>
+            </div>
+        </div>
+    </form>
+</fieldset>
+<hr>
+<div class="layui-input-inline">
+    <div class="layui-form-item">
+        <button type="button" class="layui-btn" id="push">提交</button>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" src="../assets/layui/layui.js"></script>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script>
+
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+
+    });
+    var majorinfo = document.getElementById("majorinfo")
+    $.ajax({
+        type: "post",
+        contentType: "application/x-www-form-urlencoded",
+        url: "/api/v1/classroom/showmajor",
+        data: {},
+        async: false,
+        dataType: "json",
+        success: function (data) {
+            if (data.resultTypeEnum == 200) {
+                rolelist = data.message;
+                rolelist.forEach(function (item, index) {
+                    majorinfo.options.add(new Option(item.name, item.id));
+                })
+            } else {
+                layer.msg(data.message, {icon: 5})
+            }
+        }
+    });
+
+
+    $("#push").click(function () {
+
+        var name = $("#classroom").val()
+        var majorId = $("#majorinfo").val()
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/api/v1/classroom/add",
+            data: {
+                "majorId":majorId,
+                "className":name
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.resultTypeEnum == 200) {
+                    layer.msg("操作成功", {
+                        icon: 1
+                    });
+                    var index = parent.layer.getFrameIndex(window.name);
+
+                    parent.layui.table.reload('test');
+                    //关闭父级页面的表格
+                }else {
+                    layer.msg(data.message, {
+                        icon: 5
+                    });
+                }
+            }
+        });
+    })
+</script>
+</html>

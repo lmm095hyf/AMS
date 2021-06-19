@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理</title>
+</head>
+<link rel="stylesheet" href="../assets/layui/css/layui.css" media="all"/>
+<body style="margin: 10px">
+<fieldset class="layui-elem-field">
+    <legend>学生姓名</legend>
+    <div class="layui-field-box">
+        <input type="text" name="sname" id="sname" class="layui-input" placeholder="学生姓名">
+    </div>
+</fieldset>
+
+<fieldset class="layui-elem-field">
+
+    <legend>学生班级</legend>
+    <div class="layui-field-box">
+        <input type="text" name="smajor" id="smajor" class="layui-input" placeholder="学生班级">
+    </div>
+
+</fieldset>
+
+<fieldset class="layui-elem-field">
+
+    <legend>学生专业</legend>
+    <div class="layui-field-box">
+        <input type="text" name="sdepart" id="sdepart" class="layui-input" placeholder="学生专业">
+    </div>
+
+</fieldset>
+
+
+
+
+<hr>
+<div class="layui-input-inline">
+    <div class="layui-form-item">
+        <button type="button" class="layui-btn" id="push" onclick="push()">提交</button>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../assets/layui/layui.js"></script>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script>
+
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+    });
+
+    function push() {
+
+        var sname = $("#sname").val();
+        var smajor = $("#smajor").val();
+        var sdepart = $("#sdepart").val();
+
+
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/student/add",
+            data: {
+                "sname":$("#tname").val(),
+                "smajor":$("#smajor").val(),
+                "sdepart":$("#sdepart").val()
+
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.resultTypeEnum == 200) {
+                    layer.msg("操作成功", {
+                        icon: 1
+                    });
+                    var index = parent.layer.getFrameIndex(window.name);
+
+                    parent.layui.table.reload('test');
+                    //关闭父级页面的表格
+                }else {
+                    layer.msg(data.message, {
+                        icon: 5
+                    });
+                }
+            }
+        });
+    }
+
+</script>
+</html>

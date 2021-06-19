@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="assets/layui/css/layui.css">
+    <style type="text/css">
+        .container {
+            width: 420px;
+            height: 320px;
+            min-height: 320px;
+            max-height: 320px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            padding: 20px;
+            z-index: 130;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 3px 18px rgba(100, 0, 0, .5);
+            font-size: 16px;
+        }
+
+
+        .layui-input {
+            border-radius: 5px;
+            width: 300px;
+            height: 40px;
+            font-size: 15px;
+        }
+
+        .layui-form-item {
+            margin-left: -20px;
+        }
+
+        #logoid {
+            margin-top: -16px;
+            padding-left: 150px;
+            padding-bottom: 15px;
+        }
+
+
+        .verity {
+            width: 120px;
+        }
+
+        .font-set {
+            font-size: 13px;
+            text-decoration: none;
+            margin-left: 120px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .bgImg {
+            height: 100%;
+            width: 100%;
+            background: url('assets/images/bg_img.jpg') no-repeat;
+            background-size: cover;
+            position: absolute;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body class="bgImg">
+<div class="container">
+    <div align="center"><h3>湖南工学院教务管理系统</h3></div>
+    <div class="layui-form-item" style="margin-top: 25px">
+        <label class="layui-form-label">用户名</label>
+
+        <div class="layui-input-block">
+            <input type="text" id="sysname" name="sysname" required lay-verify="required"
+                   placeholder="请输入用户名" autocomplete="off" class="layui-input">
+        </div>
+
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密 &nbsp;&nbsp;码</label>
+        <div class="layui-input-inline">
+            <input type="password" id="syspwd" name="syspwd" required lay-verify="required"
+                   placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+        <!-- <div class="layui-form-mid layui-word-aux">辅助文字</div> -->
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">验证码</label>
+        <div class="layui-input-inline">
+            <input type="text" id="authcode" name="title" required lay-verify="required" placeholder="请输入验证码"
+                   autocomplete="off" class="layui-input verity">
+        </div>
+        <div class="layui-form-mid layui-word-aux" style="margin-top: -10px ;margin-left: -25px">
+            <img src="/api/v1/captcha.jpg" id="authimg" onclick="authchange()">
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" onclick="login()">登录</button>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="assets/layui/layui.js"></script>
+<script type="text/javascript" src="assets/jquery.min.js"></script>
+
+
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+    });
+
+    function authchange() {
+        $("#authimg").attr("src", "/api/v1/captcha.jpg")
+    }
+
+    function login() {
+
+        var sysname = $("#sysname").val();
+        var syspwd = $("#syspwd").val();
+        var authcode = $("#authcode").val();
+
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/api/v1/user/login",
+
+            data: {
+                "sysname": sysname,
+                "syspwd": syspwd,
+                "authcode": authcode,
+            },
+
+            dataType: "json",
+
+            success: function (data) {
+
+                if (data.resultTypeEnum == 200) {
+
+                    layer.msg("登录成功！", {icon: 1});
+                    if (data.message.sysrole == '1'){
+                        window.location.href = "adminconsole.html"
+                    }
+                    if (data.message.sysrole == '2'){
+                        window.location.href = "studentconsole.html"
+                    }
+                } else {
+                    authchange()
+                    layer.msg(data.message, {icon: 2});
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

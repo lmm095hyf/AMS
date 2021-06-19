@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>通知消息</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../assets/layui/css/layui.css" media="all"/>
+</head>
+<body style="margin: 50px">
+
+
+<div class="layui-input-inline">
+
+    <form class="layui-form" method="post">
+        <div class="layui-input-inline">
+            <div class="layui-form-item">
+                    <input type="text" class="layui-input" id="rangetimes"  placeholder="开始日期 - 截至日期">
+            </div>
+        </div>
+        <div class="layui-input-inline">
+            <div class="layui-form-item">
+                <input type="text" id="name" name="name" lay-verify="name" autocomplete="off"
+                       class="layui-input"
+                       placeholder="消息题目">
+            </div>
+        </div>
+
+        <div class="layui-input-inline">
+            <div class="layui-form-item">
+                <button type="button" class="layui-btn" id="push" >提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary" id="reset">重置</button>
+                <button type="button" class="layui-btn layui-btn-normal" id="add">添加</button>
+            </div>
+        </div>
+    </form>
+
+</div>
+<table class="layui-hide" id="test" lay-filter="users"></table>
+</body>
+
+
+<script type="text/javascript" src="../assets/layui/layui.js"></script>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script type="text/javascript" src="../assets/bootstrap-3.3.7/js/bootstrap.js"></script>
+<script type="text/html" id="bar">
+    <button type="button" class="layui-btn layui-btn-xs layui-btn-normal" id="recover" lay-event="recover">详情</button>
+    <button type="button" class="layui-btn layui-btn-xs layui-btn-normal" id="del" lay-event="del">删除</button>
+</script>
+<script>
+
+
+
+    $("#add").click(function () {
+        var index = layer.open({
+            type: 2,
+            title: "通知消息添加页面",
+            area: ['30%', '50%'],
+            maxmin: true,
+            shadeClose: true,
+            shade: 0.4,
+            skin: 'layui-layer-rim',
+            content: ["./msgadd.html"],
+        });
+
+    })
+
+    var table
+    layui.use(['table','layer','laydate'], function(){
+        table = layui.table;
+        laydate = layui.laydate;
+        laydate.render({
+            elem: '#rangetimes'
+            ,type: 'datetime'
+            ,range: true
+            ,done:function (value, date, endDate) {
+
+                var ftime = '';
+                var ltime = '';
+                if (value!=null&&value!=''){
+                    ftime = value.split(" - ")[0]
+                    ltime = value.split(" - ")[1]
+                }
+                showtable("",ftime,ltime)
+            }
+        });
+        showtable()
+
+        $("#push").click(function () {
+            var name = $("#name").val()
+            showtable(name,"","")
+        })
+        $("#reset").click(function () {
+
+            showtable()
+        })
+
+        function showtable(name,ftime,ltime) {
+
+            table.render({
+                elem: '#test'
+                ,url:'/api/v1/msg/show'
+                ,toolbar: true
+                ,title: '消息通知'
+                ,totalRow: true
+                ,cols: [[
+                    {field:'id', title:'ID', fixed: 'left', unresize: true, sort: true}
+                    ,{field:'title', title:'标题', edit: 'text'}
+                    ,{field:'time', title:'时间', edit: 'text',sort: true}
+                    ,{field:'count', title:'学生已读', edit: 'text',sort: true}
+                    , {field: '', title: '操作', toolbar: "#bar"}
+                ]]
+                ,page: true
+                ,response: {
+                    statusCode: 200 //重新规定成功的状态码为 200，table 组件默认为 0
+                }
+                ,where:{
+                    "name":name,
+                    "ftime":ftime,
+                    "ltime":ltime,
+                }
+            });
+        }
+
+        table.on('tool(users)', function (obj) { //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+            switch (layEvent) {
+                case 'del':
+                    var delIndex = layer.confirm('真的删除id为' + data.id + "的通知消息吗?", function(delIndex) {
+                        $.ajax({
+                            url: '/api/v1/msg/del?id='+data.id,
+                            type: "post",
+                            success: function(suc) {
+                                if(suc.resultTypeEnum == 200) {
+                                    obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+                                    layer.close(delIndex);
+                                    console.log(delIndex);
+                                    layer.msg("删除成功", {
+                                        icon: 1
+                                    });
+                                } else {
+                                    layer.msg("删除失败", {
+                                        icon: 5
+                                    });
+                                }
+                            }
+                        });
+                        layer.close(delIndex);
+                    });
+
+                    break
+                case 'recover':
+                    var index = layer.open({
+                        type: 2,
+                        title: "通知消息详情页面",
+                        area: ['30%', '60%'],
+                        maxmin: true,
+                        shadeClose: true,
+                        shade: 0.4,
+                        skin: 'layui-layer-rim',
+                        content: ["/msginfo?id="+data.id],
+                    });
+                    break
+
+            }
+
+        });
+    });
+</script>
+
+
+</body>
+</html>

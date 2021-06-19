@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.StuExamDao">
+  <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.StuExam">
+    <id column="examid" jdbcType="INTEGER" property="examid" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="grade" jdbcType="VARCHAR" property="grade" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    examid, cid, sid, grade
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from stu_exam
+    where examid = #{examid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from stu_exam
+    where examid = #{examid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="examid" keyProperty="examid" parameterType="com.yc.ams.db.pojo.StuExam" useGeneratedKeys="true">
+    insert into stu_exam (cid, sid, grade
+      )
+    values (#{cid,jdbcType=INTEGER}, #{sid,jdbcType=INTEGER}, #{grade,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="examid" keyProperty="examid" parameterType="com.yc.ams.db.pojo.StuExam" useGeneratedKeys="true">
+    insert into stu_exam
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="sid != null">
+        sid,
+      </if>
+      <if test="grade != null">
+        grade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cid != null">
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null">
+        #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null">
+        #{grade,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yc.ams.db.pojo.StuExam">
+    update stu_exam
+    <set>
+      <if test="cid != null">
+        cid = #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="sid != null">
+        sid = #{sid,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null">
+        grade = #{grade,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where examid = #{examid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.StuExam">
+    update stu_exam
+    set cid = #{cid,jdbcType=INTEGER},
+      sid = #{sid,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=VARCHAR}
+    where examid = #{examid,jdbcType=INTEGER}
+  </update>
+</mapper>

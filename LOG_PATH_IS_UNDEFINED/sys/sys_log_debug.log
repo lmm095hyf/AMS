@@ -1,0 +1,312 @@
+2021-06-04 18:47:30.429 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-06-04 18:47:30.528 [main] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 5 mappings in 'requestMappingHandlerMapping'
+2021-06-04 18:47:30.560 [main] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-06-04 18:47:30.569 [main] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-06-04 18:47:36.028 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2021-06-04 18:47:36.028 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2021-06-04 18:47:36.028 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2021-06-04 18:47:36.029 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@200b87c7
+2021-06-04 18:47:36.029 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7c688b6
+2021-06-04 18:47:36.029 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-06-04 18:47:36.043 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/adminconsole.html", parameters={}
+2021-06-04 18:47:36.048 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.059 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.092 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/xadmin.css", parameters={}
+2021-06-04 18:47:36.092 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/font.css", parameters={}
+2021-06-04 18:47:36.093 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.094 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.097 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.097 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.101 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/js/xadmin.js", parameters={}
+2021-06-04 18:47:36.101 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/layui.js", parameters={}
+2021-06-04 18:47:36.102 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/jquery.min.js", parameters={}
+2021-06-04 18:47:36.102 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.102 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.102 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.105 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.105 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.106 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.122 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/layui.css", parameters={}
+2021-06-04 18:47:36.123 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.125 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.134 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/layer.js", parameters={}
+2021-06-04 18:47:36.134 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/welcome.html", parameters={}
+2021-06-04 18:47:36.135 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.135 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.137 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.137 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.151 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/fonts/iconfont.woff", parameters={}
+2021-06-04 18:47:36.151 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/font/iconfont.woff?v=240", parameters={masked}
+2021-06-04 18:47:36.152 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.152 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.160 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.160 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.163 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/welcome", parameters={}
+2021-06-04 18:47:36.164 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.166 [http-nio-8081-exec-2] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.166 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.169 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:36.171 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.193 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.193 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/welcome}]
+2021-06-04 18:47:36.220 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.245 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/modules/layer/default/layer.css?v=3.1.1", parameters={masked}
+2021-06-04 18:47:36.246 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.246 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/element.js", parameters={}
+2021-06-04 18:47:36.247 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.248 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.249 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.271 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/font.css", parameters={}
+2021-06-04 18:47:36.271 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/layui.js", parameters={}
+2021-06-04 18:47:36.271 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/xadmin.css", parameters={}
+2021-06-04 18:47:36.272 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.273 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.273 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.275 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/jquery.min.js", parameters={}
+2021-06-04 18:47:36.275 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/js/xadmin.js", parameters={}
+2021-06-04 18:47:36.276 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.276 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.276 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.277 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.279 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.279 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.280 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.331 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/layui.css", parameters={}
+2021-06-04 18:47:36.332 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.334 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.341 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/ams/departmentinfo.html", parameters={}
+2021-06-04 18:47:36.342 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.344 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.378 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/layer.js", parameters={}
+2021-06-04 18:47:36.378 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.380 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.419 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/welcome", parameters={}
+2021-06-04 18:47:36.419 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/welcome", parameters={}
+2021-06-04 18:47:36.420 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.420 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.421 [http-nio-8081-exec-6] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.421 [http-nio-8081-exec-4] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.421 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.421 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.421 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:36.421 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:36.422 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.422 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.423 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.423 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/welcome}]
+2021-06-04 18:47:36.424 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.424 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.424 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/welcome}]
+2021-06-04 18:47:36.425 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.429 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/jquery.min.js", parameters={}
+2021-06-04 18:47:36.429 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/css/layui.css", parameters={}
+2021-06-04 18:47:36.429 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/bootstrap-3.3.7/js/bootstrap.js", parameters={}
+2021-06-04 18:47:36.430 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/layui.js", parameters={}
+2021-06-04 18:47:36.430 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.430 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.430 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.430 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.432 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.432 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.433 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.432 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.471 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/modules/layer/default/layer.css?v=3.1.1", parameters={masked}
+2021-06-04 18:47:36.471 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/element.js", parameters={}
+2021-06-04 18:47:36.471 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.471 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.474 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.474 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.484 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/v1/admin/majormenu", parameters={}
+2021-06-04 18:47:36.484 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.486 [http-nio-8081-exec-1] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.486 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.486 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:36.487 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.487 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.487 [http-nio-8081-exec-1] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/api/v1/admin/m (truncated)...]
+2021-06-04 18:47:36.488 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.493 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/lay/modules/form.js", parameters={}
+2021-06-04 18:47:36.494 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.495 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.541 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2021-06-04 18:47:36.542 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.544 [http-nio-8081-exec-4] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.544 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.545 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2021-06-04 18:47:36.546 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.548 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.548 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/favicon.ico}]
+2021-06-04 18:47:36.558 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.710 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/adminconsole.html", parameters={}
+2021-06-04 18:47:36.710 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.712 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.741 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/xadmin.css", parameters={}
+2021-06-04 18:47:36.741 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/font.css", parameters={}
+2021-06-04 18:47:36.742 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.742 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.745 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.745 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.757 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/jquery.min.js", parameters={}
+2021-06-04 18:47:36.757 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/layui.js", parameters={}
+2021-06-04 18:47:36.757 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/js/xadmin.js", parameters={}
+2021-06-04 18:47:36.757 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.757 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.757 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.760 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.760 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.760 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.764 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/layui.css", parameters={}
+2021-06-04 18:47:36.765 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.768 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.777 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/welcome.html", parameters={}
+2021-06-04 18:47:36.777 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/layer.js", parameters={}
+2021-06-04 18:47:36.777 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.778 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.779 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.779 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.783 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/welcome", parameters={}
+2021-06-04 18:47:36.783 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.784 [http-nio-8081-exec-4] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.784 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.785 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:36.785 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.785 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.785 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/welcome}]
+2021-06-04 18:47:36.786 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.801 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/fonts/iconfont.woff", parameters={}
+2021-06-04 18:47:36.801 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/font/iconfont.woff?v=240", parameters={masked}
+2021-06-04 18:47:36.801 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.801 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.804 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.804 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.838 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/element.js", parameters={}
+2021-06-04 18:47:36.838 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/modules/layer/default/layer.css?v=3.1.1", parameters={masked}
+2021-06-04 18:47:36.838 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.838 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.839 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.839 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.852 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/jquery.min.js", parameters={}
+2021-06-04 18:47:36.852 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/font.css", parameters={}
+2021-06-04 18:47:36.852 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/css/xadmin.css", parameters={}
+2021-06-04 18:47:36.852 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/layui.js", parameters={}
+2021-06-04 18:47:36.852 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/js/xadmin.js", parameters={}
+2021-06-04 18:47:36.853 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.853 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.853 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.853 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.853 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.855 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.855 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.855 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.855 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.856 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.898 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/layui.css", parameters={}
+2021-06-04 18:47:36.898 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.900 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.905 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/ams/departmentinfo.html", parameters={}
+2021-06-04 18:47:36.905 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.907 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.931 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/layer.js", parameters={}
+2021-06-04 18:47:36.931 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.934 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.963 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/welcome", parameters={}
+2021-06-04 18:47:36.963 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/welcome", parameters={}
+2021-06-04 18:47:36.963 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.963 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.964 [http-nio-8081-exec-8] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.964 [http-nio-8081-exec-3] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:36.964 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.964 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:36.965 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:36.965 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:36.965 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.965 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:36.966 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.966 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:36.967 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/welcome}]
+2021-06-04 18:47:36.967 [http-nio-8081-exec-3] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:36 CST 2021, status=404, error=Not Found, message=, path=/welcome}]
+2021-06-04 18:47:36.967 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.968 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:36.972 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/css/layui.css", parameters={}
+2021-06-04 18:47:36.972 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/bootstrap-3.3.7/js/bootstrap.js", parameters={}
+2021-06-04 18:47:36.972 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/layui.js", parameters={}
+2021-06-04 18:47:36.972 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/jquery.min.js", parameters={}
+2021-06-04 18:47:36.973 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.973 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.973 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.973 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:36.975 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.975 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.975 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:36.975 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.014 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/css/modules/layer/default/layer.css?v=3.1.1", parameters={masked}
+2021-06-04 18:47:37.014 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/xadmin/lib/layui/lay/modules/element.js", parameters={}
+2021-06-04 18:47:37.015 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.015 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.017 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.017 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.041 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/api/v1/admin/majormenu", parameters={}
+2021-06-04 18:47:37.041 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.042 [http-nio-8081-exec-7] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:37.043 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:37.043 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for POST "/error", parameters={}
+2021-06-04 18:47:37.044 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:37.044 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:37.044 [http-nio-8081-exec-7] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:37 CST 2021, status=404, error=Not Found, message=, path=/api/v1/admin/m (truncated)...]
+2021-06-04 18:47:37.045 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:37.052 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/lay/modules/form.js", parameters={}
+2021-06-04 18:47:37.052 [http-nio-8081-exec-6] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.054 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.094 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/lay/modules/layer.js", parameters={}
+2021-06-04 18:47:37.095 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.096 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.106 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/css/modules/layer/default/layer.css?v=3.1.1", parameters={masked}
+2021-06-04 18:47:37.107 [http-nio-8081-exec-3] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.108 [http-nio-8081-exec-3] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.110 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/lay/modules/table.js", parameters={}
+2021-06-04 18:47:37.110 [http-nio-8081-exec-10] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.112 [http-nio-8081-exec-10] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.117 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/lay/modules/laytpl.js", parameters={}
+2021-06-04 18:47:37.117 [http-nio-8081-exec-9] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.118 [http-nio-8081-exec-9] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.122 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/lay/modules/laypage.js", parameters={}
+2021-06-04 18:47:37.123 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.124 [http-nio-8081-exec-1] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.129 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/lay/modules/util.js", parameters={}
+2021-06-04 18:47:37.129 [http-nio-8081-exec-5] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.130 [http-nio-8081-exec-5] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:37.143 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/favicon.ico", parameters={}
+2021-06-04 18:47:37.143 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.144 [http-nio-8081-exec-2] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:37.145 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:37.145 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error", parameters={}
+2021-06-04 18:47:37.146 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:37.146 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:37.146 [http-nio-8081-exec-2] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:37 CST 2021, status=404, error=Not Found, message=, path=/favicon.ico}]
+2021-06-04 18:47:37.147 [http-nio-8081-exec-2] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:37.155 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/v1/admin/showstudentinfo?page=1&limit=10", parameters={masked}
+2021-06-04 18:47:37.156 [http-nio-8081-exec-4] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.158 [http-nio-8081-exec-4] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:37.158 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:37.159 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error?page=1&limit=10", parameters={masked}
+2021-06-04 18:47:37.159 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:37.160 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:37.160 [http-nio-8081-exec-4] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:37 CST 2021, status=404, error=Not Found, message=, path=/api/v1/admin/s (truncated)...]
+2021-06-04 18:47:37.161 [http-nio-8081-exec-4] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404
+2021-06-04 18:47:37.165 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/assets/layui/font/iconfont.woff2?v=256", parameters={masked}
+2021-06-04 18:47:37.165 [http-nio-8081-exec-7] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:37.168 [http-nio-8081-exec-7] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:45.889 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - POST "/depart/add", parameters={masked}
+2021-06-04 18:47:45.889 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.yc.ams.controller.departController#addDepart(Department)
+2021-06-04 18:47:46.093 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:46.093 [http-nio-8081-exec-6] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing [com.yc.ams.utils.ResultResponse@1f2348c0]
+2021-06-04 18:47:46.094 [http-nio-8081-exec-6] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 200 OK
+2021-06-04 18:47:46.107 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - GET "/api/v1/admin/showstudentinfo?page=1&limit=10", parameters={masked}
+2021-06-04 18:47:46.107 [http-nio-8081-exec-8] DEBUG o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-06-04 18:47:46.109 [http-nio-8081-exec-8] DEBUG o.s.w.servlet.resource.ResourceHttpRequestHandler - Resource not found
+2021-06-04 18:47:46.109 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Completed 404 NOT_FOUND
+2021-06-04 18:47:46.109 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - "ERROR" dispatch for GET "/error?page=1&limit=10", parameters={masked}
+2021-06-04 18:47:46.110 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-06-04 18:47:46.110 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Using 'application/json', given [application/json, text/javascript, */*;q=0.01] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-06-04 18:47:46.110 [http-nio-8081-exec-8] DEBUG o.s.w.s.m.m.annotation.HttpEntityMethodProcessor - Writing [{timestamp=Fri Jun 04 18:47:46 CST 2021, status=404, error=Not Found, message=, path=/api/v1/admin/s (truncated)...]
+2021-06-04 18:47:46.111 [http-nio-8081-exec-8] DEBUG org.springframework.web.servlet.DispatcherServlet - Exiting from "ERROR" dispatch, status 404

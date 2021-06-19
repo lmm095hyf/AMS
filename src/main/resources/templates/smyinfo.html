@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:selected="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>我的信息</title>
+    <link th:href="@{~/assets/layui/css/layui.css}" rel="stylesheet"/>
+</head>
+<body style="margin: 10px">
+<h3 align="center"><font color="red"><strong>如果信息有误请联系管理员！</strong></font></h3>
+<hr>
+<fieldset class="layui-elem-field">
+    <legend>学号</legend>
+    <div class="layui-field-box" th:text="${studentinfo.number}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>姓名</legend>
+    <div class="layui-field-box" th:text="${studentinfo.uname}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>入学时间</legend>
+    <div class="layui-field-box" th:text="${studentinfo.ctime}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>毕业时间</legend>
+    <div class="layui-field-box" th:text="${studentinfo.gtime}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>出生日期</legend>
+    <div class="layui-field-box" th:text="${studentinfo.borthday}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>身份证</legend>
+    <div class="layui-field-box" th:text="${studentinfo.idcard}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>电话</legend>
+    <div class="layui-field-box" th:text="${studentinfo.phone}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>学院</legend>
+    <div class="layui-field-box" th:text="${studentinfo.classroom}">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>宿舍</legend>
+    <div class="layui-field-box" th:text="${studentinfo.dormroom}">
+    </div>
+</fieldset>
+</body>
+<script th:src="@{~/assets/layui/layui.js}"></script>
+<script th:src="@{~/assets/jquery.min.js}"></script>
+</html>

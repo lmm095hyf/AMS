@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.DepartmentDao">
+  <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.Department">
+    <id column="deid" jdbcType="INTEGER" property="deid" />
+    <result column="dename" jdbcType="VARCHAR" property="dename" />
+    <result column="deintro" jdbcType="VARCHAR" property="deintro" />
+    <result column="denumber" jdbcType="INTEGER" property="denumber" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    deid, dename, deintro, denumber
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from department
+    where deid = #{deid,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from department
+  </select>
+
+  <select id="selectStudentInfoById" parameterType="Integer"
+          resultType="com.yc.ams.db.pojo.Department">
+    SELECT deid,
+           dename,
+           deintro,
+           denumber FROM department where department.deid = #{deid}
+  </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from department
+    where deid = #{deid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="deid" keyProperty="deid" parameterType="com.yc.ams.db.pojo.Department" useGeneratedKeys="true">
+    insert into department (dename, deintro, denumber
+      )
+    values (#{dename,jdbcType=VARCHAR}, #{deintro,jdbcType=VARCHAR}, #{denumber,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="deid" keyProperty="deid" parameterType="com.yc.ams.db.pojo.Department" useGeneratedKeys="true">
+    insert into department
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dename != null">
+        dename,
+      </if>
+      <if test="deintro != null">
+        deintro,
+      </if>
+      <if test="denumber != null">
+        denumber,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dename != null">
+        #{dename,jdbcType=VARCHAR},
+      </if>
+      <if test="deintro != null">
+        #{deintro,jdbcType=VARCHAR},
+      </if>
+      <if test="denumber != null">
+        #{denumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.yc.ams.db.pojo.Department">
+    update department
+    <set>
+      <if test="deid != null">
+        deid = #{deid,jdbcType=INTEGER},
+      </if>
+      <if test="dename != null">
+        dename = #{dename,jdbcType=VARCHAR},
+      </if>
+      <if test="deintro != null">
+        deintro = #{deintro,jdbcType=VARCHAR},
+      </if>
+      <if test="denumber != null">
+        denumber = #{denumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where deid = #{deid,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.Department">
+    update department
+    set dename = #{dename,jdbcType=VARCHAR},
+      deintro = #{deintro,jdbcType=VARCHAR},
+      denumber = #{denumber,jdbcType=INTEGER}
+    where deid = #{deid,jdbcType=INTEGER}
+  </update>
+
+</mapper>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.StudentDao">
+  <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.Student">
+    <id column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="sname" jdbcType="VARCHAR" property="sname" />
+    <result column="smajor" jdbcType="VARCHAR" property="smajor" />
+    <result column="sdepart" jdbcType="VARCHAR" property="sdepart" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    sid, sname, smajor, sdepart
+  </sql>
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from teacher
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where sid = #{sid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from student
+    where sid = #{sid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="sid" keyProperty="sid" parameterType="com.yc.ams.db.pojo.Student" useGeneratedKeys="true">
+    insert into student (sname, smajor, sdepart
+      )
+    values (#{sname,jdbcType=VARCHAR}, #{smajor,jdbcType=VARCHAR}, #{sdepart,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="sid" keyProperty="sid" parameterType="com.yc.ams.db.pojo.Student" useGeneratedKeys="true">
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sname != null">
+        sname,
+      </if>
+      <if test="smajor != null">
+        smajor,
+      </if>
+      <if test="sdepart != null">
+        sdepart,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sname != null">
+        #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="smajor != null">
+        #{smajor,jdbcType=VARCHAR},
+      </if>
+      <if test="sdepart != null">
+        #{sdepart,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yc.ams.db.pojo.Student">
+    update student
+    <set>
+      <if test="sname != null">
+        sname = #{sname,jdbcType=VARCHAR},
+      </if>
+      <if test="smajor != null">
+        smajor = #{smajor,jdbcType=VARCHAR},
+      </if>
+      <if test="sdepart != null">
+        sdepart = #{sdepart,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.Student">
+    update student
+    set sname = #{sname,jdbcType=VARCHAR},
+      smajor = #{smajor,jdbcType=VARCHAR},
+      sdepart = #{sdepart,jdbcType=VARCHAR}
+    where sid = #{sid,jdbcType=INTEGER}
+  </update>
+</mapper>
