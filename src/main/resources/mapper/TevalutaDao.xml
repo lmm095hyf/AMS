@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.TevalutaDao">
+  <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.Tevaluta">
+    <id column="teid" jdbcType="INTEGER" property="teid" />
+    <result column="tecontent" jdbcType="VARCHAR" property="tecontent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    teid, tecontent
+  </sql>
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from tevaluta
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tevaluta
+    where teid = #{teid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tevaluta
+    where teid = #{teid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="teid" keyProperty="teid" parameterType="com.yc.ams.db.pojo.Tevaluta" useGeneratedKeys="true">
+    insert into tevaluta (tecontent)
+    values (#{tecontent,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="teid" keyProperty="teid" parameterType="com.yc.ams.db.pojo.Tevaluta" useGeneratedKeys="true">
+    insert into tevaluta
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tecontent != null">
+        tecontent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tecontent != null">
+        #{tecontent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.yc.ams.db.pojo.Tevaluta">
+    update tevaluta
+    <set>
+      <if test="tecontent != null">
+        tecontent = #{tecontent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where teid = #{teid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.Tevaluta">
+    update tevaluta
+    set tecontent = #{tecontent,jdbcType=VARCHAR}
+    where teid = #{teid,jdbcType=INTEGER}
+  </update>
+</mapper>

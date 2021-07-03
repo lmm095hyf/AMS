@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yc.ams.db.dao.StuCourseDao">
+
+<select id="selSc" parameterType="com.yc.ams.db.pojo.StuCourse" resultType="com.yc.ams.db.pojo.StuCourse">
+    select sc.scid,sc.sid,sc.cid,s.sname,s.smajor,c.coname,c.citype
+    from stu_course sc,student s,course c,classinfo ci where sc.sid=s.sid and c.cid=sc.cid
+                                                         and ci.cname=s.smajor
+</select>
+
+</mapper>

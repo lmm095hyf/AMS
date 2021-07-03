@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布公告通知</title>
+</head>
+<link rel="stylesheet" href="../assets/layui/css/layui.css" media="all"/>
+<body style="margin: 10px">
+<fieldset class="layui-elem-field">
+    <legend>公告标题</legend>
+    <div class="layui-field-box">
+        <input type="text" name="newtitle" id="newtitle" class="layui-input" placeholder="公告标题">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>公告内容</legend>
+    <div class="layui-field-box">
+        <input type="text" name="newcontent" id="newcontent" class="layui-input" placeholder="请使用Markdown语法编写">
+    </div>
+</fieldset>
+<fieldset class="layui-elem-field">
+    <legend>公告作者</legend>
+    <div class="layui-field-box">
+        <input type="text" name="newauthor" id="newauthor" class="layui-input" placeholder="公告作者">
+    </div>
+</fieldset>
+<hr>
+<div class="layui-input-inline">
+    <div class="layui-form-item">
+        <button type="button" class="layui-btn" id="push" onclick="push()">提交</button>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../assets/layui/layui.js"></script>
+<script type="text/javascript" src="../assets/jquery.min.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form
+            , layer = layui.layer
+            , layedit = layui.layedit
+            , laydate = layui.laydate;
+    });
+
+    function push() {
+
+        var newtitle = $("#newtitle").val();
+        var newcontent = $("#newcontent").val();
+        var newauthor = $("#newauthor").val();
+
+        $.ajax({
+            type: "post",
+            contentType: "application/x-www-form-urlencoded",
+            url: "/news/add",
+            data: {
+                "newtitle":$("#newtitle").val(),
+                "newcontent":$("#newcontent").val(),
+                "newauthor":$("#newauthor").val()
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.resultTypeEnum == 200) {
+                    layer.msg("操作成功", {
+                        icon: 1
+                    });
+                    var index = parent.layer.getFrameIndex(window.name);
+
+                    //parent.layui.table.reload('test');
+                    window.location.reload();
+                    //关闭父级页面的表格
+                }else {
+                    layer.msg(data.message, {
+                        icon: 5
+                    });
+                }
+            }
+        });
+    }
+
+</script>
+</html>

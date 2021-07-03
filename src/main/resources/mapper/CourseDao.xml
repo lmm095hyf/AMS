@@ -4,10 +4,20 @@
   <resultMap id="BaseResultMap" type="com.yc.ams.db.pojo.Course">
     <id column="cid" jdbcType="INTEGER" property="cid" />
     <result column="coname" jdbcType="VARCHAR" property="coname" />
+    <result column="citype" jdbcType="VARCHAR" property="citype" />
+    <result column="cexam" jdbcType="INTEGER" property="cexam" />
+    <result column="cdatenum" jdbcType="INTEGER" property="cdatenum" />
+    <result column="cnumber" jdbcType="INTEGER" property="cnumber" />
+    <result column="cmaxnumber" jdbcType="INTEGER" property="cmaxnumber" />
   </resultMap>
   <sql id="Base_Column_List">
-    cid, coname
+    cid, coname, citype, cexam, cdatenum, cnumber, cmaxnumber
   </sql>
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from course
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -19,19 +29,54 @@
     where cid = #{cid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="cid" keyProperty="cid" parameterType="com.yc.ams.db.pojo.Course" useGeneratedKeys="true">
-    insert into course (coname)
-    values (#{coname,jdbcType=VARCHAR})
+    insert into course (coname, citype, cexam, 
+      cdatenum, cnumber, cmaxnumber
+      )
+    values (#{coname,jdbcType=VARCHAR}, #{citype,jdbcType=VARCHAR}, #{cexam,jdbcType=INTEGER}, 
+      #{cdatenum,jdbcType=INTEGER}, #{cnumber,jdbcType=INTEGER}, #{cmaxnumber,jdbcType=INTEGER}
+      )
   </insert>
+
   <insert id="insertSelective" keyColumn="cid" keyProperty="cid" parameterType="com.yc.ams.db.pojo.Course" useGeneratedKeys="true">
     insert into course
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="coname != null">
         coname,
       </if>
+      <if test="citype != null">
+        citype,
+      </if>
+      <if test="cexam != null">
+        cexam,
+      </if>
+      <if test="cdatenum != null">
+        cdatenum,
+      </if>
+      <if test="cnumber != null">
+        cnumber,
+      </if>
+      <if test="cmaxnumber != null">
+        cmaxnumber,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="coname != null">
         #{coname,jdbcType=VARCHAR},
+      </if>
+      <if test="citype != null">
+        #{citype,jdbcType=VARCHAR},
+      </if>
+      <if test="cexam != null">
+        #{cexam,jdbcType=INTEGER},
+      </if>
+      <if test="cdatenum != null">
+        #{cdatenum,jdbcType=INTEGER},
+      </if>
+      <if test="cnumber != null">
+        #{cnumber,jdbcType=INTEGER},
+      </if>
+      <if test="cmaxnumber != null">
+        #{cmaxnumber,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -41,12 +86,32 @@
       <if test="coname != null">
         coname = #{coname,jdbcType=VARCHAR},
       </if>
+      <if test="citype != null">
+        citype = #{citype,jdbcType=VARCHAR},
+      </if>
+      <if test="cexam != null">
+        cexam = #{cexam,jdbcType=INTEGER},
+      </if>
+      <if test="cdatenum != null">
+        cdatenum = #{cdatenum,jdbcType=INTEGER},
+      </if>
+      <if test="cnumber != null">
+        cnumber = #{cnumber,jdbcType=INTEGER},
+      </if>
+      <if test="cmaxnumber != null">
+        cmaxnumber = #{cmaxnumber,jdbcType=INTEGER},
+      </if>
     </set>
     where cid = #{cid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.yc.ams.db.pojo.Course">
     update course
-    set coname = #{coname,jdbcType=VARCHAR}
+    set coname = #{coname,jdbcType=VARCHAR},
+      citype = #{citype,jdbcType=VARCHAR},
+      cexam = #{cexam,jdbcType=INTEGER},
+      cdatenum = #{cdatenum,jdbcType=INTEGER},
+      cnumber = #{cnumber,jdbcType=INTEGER},
+      cmaxnumber = #{cmaxnumber,jdbcType=INTEGER}
     where cid = #{cid,jdbcType=INTEGER}
   </update>
 </mapper>

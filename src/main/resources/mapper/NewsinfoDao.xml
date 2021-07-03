@@ -5,12 +5,16 @@
     <id column="newid" jdbcType="INTEGER" property="newid" />
     <result column="newtitle" jdbcType="VARCHAR" property="newtitle" />
     <result column="newcontent" jdbcType="VARCHAR" property="newcontent" />
+    <result column="newauthor" jdbcType="VARCHAR" property="newauthor" />
     <result column="newdate" jdbcType="TIMESTAMP" property="newdate" />
     <result column="newpictures" jdbcType="VARCHAR" property="newpictures" />
   </resultMap>
   <sql id="Base_Column_List">
-    newid, newtitle, newcontent, newdate, newpictures
+    newid, newtitle, newcontent, newauthor, newdate, newpictures
   </sql>
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select * from newsinfo
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -22,10 +26,10 @@
     where newid = #{newid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" keyColumn="newid" keyProperty="newid" parameterType="com.yc.ams.db.pojo.Newsinfo" useGeneratedKeys="true">
-    insert into newsinfo (newtitle, newcontent, newdate, 
-      newpictures)
-    values (#{newtitle,jdbcType=VARCHAR}, #{newcontent,jdbcType=VARCHAR}, #{newdate,jdbcType=TIMESTAMP}, 
-      #{newpictures,jdbcType=VARCHAR})
+    insert into newsinfo (newtitle, newcontent, newauthor, 
+      newdate, newpictures)
+    values (#{newtitle,jdbcType=VARCHAR}, #{newcontent,jdbcType=VARCHAR}, #{newauthor,jdbcType=VARCHAR}, 
+      #{newdate,jdbcType=TIMESTAMP}, #{newpictures,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="newid" keyProperty="newid" parameterType="com.yc.ams.db.pojo.Newsinfo" useGeneratedKeys="true">
     insert into newsinfo
@@ -35,6 +39,9 @@
       </if>
       <if test="newcontent != null">
         newcontent,
+      </if>
+      <if test="newauthor != null">
+        newauthor,
       </if>
       <if test="newdate != null">
         newdate,
@@ -49,6 +56,9 @@
       </if>
       <if test="newcontent != null">
         #{newcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="newauthor != null">
+        #{newauthor,jdbcType=VARCHAR},
       </if>
       <if test="newdate != null">
         #{newdate,jdbcType=TIMESTAMP},
@@ -67,6 +77,9 @@
       <if test="newcontent != null">
         newcontent = #{newcontent,jdbcType=VARCHAR},
       </if>
+      <if test="newauthor != null">
+        newauthor = #{newauthor,jdbcType=VARCHAR},
+      </if>
       <if test="newdate != null">
         newdate = #{newdate,jdbcType=TIMESTAMP},
       </if>
@@ -80,6 +93,7 @@
     update newsinfo
     set newtitle = #{newtitle,jdbcType=VARCHAR},
       newcontent = #{newcontent,jdbcType=VARCHAR},
+      newauthor = #{newauthor,jdbcType=VARCHAR},
       newdate = #{newdate,jdbcType=TIMESTAMP},
       newpictures = #{newpictures,jdbcType=VARCHAR}
     where newid = #{newid,jdbcType=INTEGER}

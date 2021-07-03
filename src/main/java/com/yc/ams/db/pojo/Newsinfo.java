@@ -16,6 +16,11 @@ public class Newsinfo implements Serializable {
 
     private String newcontent;
 
+    /**
+     * 作者
+     */
+    private String newauthor;
+
     private Date newdate;
 
     private String newpictures;
